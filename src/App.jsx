@@ -48,7 +48,7 @@ function App() {
           <span className="bar"></span>
         </div>
         <div className={`nav-links ${isOpen ? 'show' : ''}`}>
-          <NavLink to="/source-app/" end className="navLink" onClick={toggleMenu}>Home</NavLink>
+          <NavLink to="/source-app/" className="navLink" onClick={toggleMenu}>Home</NavLink>
           <NavLink to="/source-app/about" className="navLink" onClick={toggleMenu}>About</NavLink>
           <NavLink to="/source-app/contact" className="navLink" onClick={toggleMenu}>Contact</NavLink>
         </div>
