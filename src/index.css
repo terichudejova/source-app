@@ -10,6 +10,12 @@
 
 .innerBox {
   width: 80%;
+  border: dashed 0.2px black;
+}
+
+.innerBox h1 {
+  font-size: var(--size-xxxl);
+  color: white;
 }
 
 .innerBox h2 {
@@ -21,7 +27,6 @@
   font-size: var(--size-m);
   color: white;
 }
-
 
 
 /* NAVBAR */
@@ -73,12 +78,6 @@ nav {
   background-color: var(--second-color);
   padding-top: var(--space-xs);
   padding-bottom: var(--space-xs);
-}
-
-#homeLink {
-  color: var(--main-color);
-  background-color: transparent;
-  border-radius: 16px;
 }
 
 
@@ -173,3 +172,74 @@ nav {
 
 
 /* CONTACT */
+
+
+
+
+
+/* RESPONSIVITY */
+
+/* Bigger widths */
+@media only screen and (min-width: 2000px) {
+  .innerBox {
+    width: 70%;
+  }
+
+  .innerBox h2 {
+    font-size: var(--size-xxxl);
+  }
+
+  .innerBox p {
+    font-size: var(--size-l);
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  .innerBox {
+    width: 60%;
+  }
+
+  .innerBox h2 {
+    font-size: calc(var(--size-l) * 2);
+  }
+
+  .innerBox p {
+    font-size: var(--size-xl);
+  }
+}
+
+
+/* Smaller widths */
+@media only screen and (max-width: 800px) {
+  .innerBox h2 {
+    font-size: var(--size-xl);
+    color: white;
+  }
+
+  .innerBox p {
+    font-size: var(--size-s2);
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .innerBox {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .innerBox h2 {
+    font-size: var(--size-l);
+    color: white;
+  }
+
+  .innerBox p {
+    font-size: var(--size-s);
+    color: white;
+  }
+
+  .navLink {
+    font-size: var(--size-s2);
+  }
+}
