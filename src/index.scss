@@ -1,0 +1,247 @@
+@import "App";
+
+/* OBECNÁ NASTAVENÍ */
+.outerBox {
+    padding-top: $s-l * 3;
+    @include column-start-center;
+    width: 100%;
+    background-color: $main-color;
+
+    .innerBox {
+        width: 80%;
+        border: dashed 0.2px black;
+
+        h1 {
+            font-size: $f-xxxl;
+            color: white;
+        }
+          
+        h2 {
+            font-size: $f-xxl;
+            color: white;
+        }
+          
+        p {
+            font-size: $f-m;
+            color: white;
+        }
+      }
+  }
+  
+  
+  
+  
+  /* NAVBAR */
+  nav {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    @include row-between-center;
+    padding: $s-s $s-m;
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  .nav-links {
+    width: 100%;
+    @include row-between-center;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    font-family: $main-font;
+    letter-spacing: 2px;
+    font-size: $f-m;
+    padding: $s-xxs $s-xs;
+    color: white;
+  }
+  
+  .navLink:hover {
+    cursor: pointer;
+    color: $hover-color;
+  }
+  
+  .navLink.active {
+    color: $hover-color;
+    background-color: $main-color;
+    border-radius: 16px;
+  }
+  
+  .nav.scrolled {
+    background-color: $light-color;
+    padding-top: $s-xs;
+    padding-bottom: $s-xs;
+  }
+  
+  
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    height: 3px;
+    width: 35px;
+    background-color: $light-color;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .nav.scrolled .hamburger {
+    margin-top: $s-xs;
+  }
+  
+  
+  /* Přechod hamburgeru na křížek */
+  .nav.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 13.5px) scaleX(1.2);
+  }
+  
+  .nav.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -13.5px) scaleX(1.2);
+  }
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    /* NAVBAR */
+    .nav-links {
+      display: none;
+    }
+  
+    .nav.open {
+      padding-top: 0;
+    }
+  
+    .nav.open .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      margin-top: 0;
+      z-index: 1;
+      padding-top: $s-xs;
+      padding-bottom: $s-xs;
+    }
+  
+    .navLink {
+      margin-bottom: $s-xxs;
+      color: $main-color;
+    }
+  
+    .hamburger {
+      display: flex;
+      z-index: 2;
+      margin-top: $s-s;
+    }
+  
+    .nav.open .bar {
+      background-color: $hover-color;
+    }
+    
+    .nav-links.show {
+      display: flex;
+      background-color: $light-color;
+    }
+  
+    #homeLink {
+      color: $light-color;
+    }
+  }
+  
+  /* HOME */
+  
+  
+  /* ABOUT */
+  
+  
+  /* CONTACT */
+  
+  
+  
+  
+  
+  /* RESPONSIVITY */
+  .outerBox {
+    .innerBox {
+
+        //min 2000px
+        @include w-2000 {
+            width: 70%;
+
+            h2 {
+                font-size: $f-xxxl;
+            }
+            
+            p {
+                font-size: $f-l;
+            }
+        }
+
+        //min 3000px
+        @include w-3000 {
+            width: 60%;
+
+            h2 {
+                font-size: $f-l * 2;
+            }
+            
+            p {
+                font-size: $f-xl;
+            }
+        }
+
+        //max 800px
+        @include w-800 {
+            h2 {
+                font-size: $f-xl;
+
+            }
+
+            p {
+                font-size: $f-s;
+            }
+        }
+
+        //max 600px
+        @include w-600 {
+            width: 85%;
+        }
+
+        //max 400px
+        @include w-400 {
+
+            h2 {
+                font-size: $f-l;
+            }
+
+            p {
+                font-size: $f-s;
+            }
+        }
+    }
+  }
+
+
+.navLink {
+
+    //max 400px
+    @include w-400 {
+        font-size: $f-s;
+    }
+}
+  
