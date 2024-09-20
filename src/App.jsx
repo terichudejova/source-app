@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import "./App.css"
@@ -10,6 +10,7 @@ function App() {
 
   //Hamburger Menu
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -38,6 +39,22 @@ function App() {
       }, []);
 
 
+  //Zavření hamburger menu při kliknutí na obrazovku
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+  
+    document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+  }, []);
+
+
+
   return (
     <div>
       <ScrollToTop />
@@ -47,9 +64,10 @@ function App() {
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className={`nav-links ${isOpen ? 'show' : ''}`}>
+        <div ref={navRef} className={`nav-links ${isOpen ? 'show' : ''}`}>
           <NavLink to="/source-app/" end className="navLink" onClick={toggleMenu}>Home</NavLink>
           <NavLink to="/source-app/about" className="navLink" onClick={toggleMenu}>About</NavLink>
+          <NavLink to="/source-app/shopping" className="navLink" onClick={toggleMenu}>Shopping List</NavLink>
           <NavLink to="/source-app/contact" className="navLink" onClick={toggleMenu}>Contact</NavLink>
         </div>
       </nav>

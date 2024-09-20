@@ -60,6 +60,13 @@ $s-xxxl: 9rem;
     align-items: center;
 }
 
+@mixin row-start-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
 
 //breakpoints
 $breakpoints: (

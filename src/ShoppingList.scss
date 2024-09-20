@@ -1,0 +1,69 @@
+@import "./App";
+
+
+.shoppingList {
+    .itemBox {
+        @include row-start-center;
+        margin-bottom: $s-m;
+
+        label {
+            font-size: $f-m;
+            margin-right: $s-s;
+            color: $light-color;
+            display: none;
+        }
+
+        .inputStyle {
+            width: 20rem;
+            margin-right: $s-s;
+            margin-bottom: 0;
+        }
+
+        .icon {
+            font-size: $f-xl;
+            color: $light-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $contrast-color;
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            font-size: $f-l;
+            color: $light-color;
+            margin-bottom: $s-xs;
+            @include row-start-center;
+            
+
+            input[type="checkbox"] {
+                transform: scale(2);
+                cursor: pointer;
+            }
+
+            label {
+                margin-left: $s-xs;
+                margin-right: $s-xxs;
+            }
+
+            .checkedLabel {
+                text-decoration: line-through;
+            }
+
+            .deleteIcon {
+                font-size: $f-xl;
+                cursor: pointer;
+
+                &:hover {
+                    color: $contrast-color;
+                    
+                }
+            }
+        }
+    }
+}
