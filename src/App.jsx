@@ -65,10 +65,12 @@ function App() {
           <span className="bar"></span>
         </div>
         <div ref={navRef} className={`nav-links ${isOpen ? 'show' : ''}`}>
-          <NavLink to="/source-app/" end className="navLink" onClick={toggleMenu}>Home</NavLink>
-          <NavLink to="/source-app/about" className="navLink" onClick={toggleMenu}>About</NavLink>
-          <NavLink to="/source-app/shopping" className="navLink" onClick={toggleMenu}>Shopping List</NavLink>
-          <NavLink to="/source-app/contact" className="navLink" onClick={toggleMenu}>Contact</NavLink>
+          <NavLink to="/source-app/" end className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>Home</NavLink>
+          <NavLink to="/source-app/externalapi" className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>External API</NavLink>
+          <NavLink to="/source-app/localstorage" className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>Local Storage</NavLink>
+          <NavLink to="/source-app/registration" className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>Registration</NavLink>
+          <NavLink to="/source-app/localapi" className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>Local Api</NavLink>
+          <NavLink to="/source-app/management" className={`navLink ${isScrolled ? "scrolled" : ""}`} onClick={toggleMenu}>Status Management</NavLink>
         </div>
       </nav>
       <Outlet />

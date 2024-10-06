@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function ShoppingList() {
+export default function LocalStorageList() {
 
     //spuštění shopping listu, nastavení hodnot listu - extrakce z local storage
     const [list, setList] = useState(() => {
@@ -52,15 +52,12 @@ export default function ShoppingList() {
     //konstanta nesoucí hodnotu filtrovací položky
     const [searchedItem, setSearchedItem] = useState("");
 
-    //funkce pro vyfiltrování shopping listu podle filtrovací položky (searchedItem)
-    const filterList = (e) => {
-
-    }
 
     return (
         <div className="outerBox shoppingList">
             <div className="innerBox">  
-                <h2>Shopping List</h2>
+                <h2>Shopping List - Local Storage</h2>
+                <p>This shopping list saves the entered data to <span>local storage</span>, so even after refreshing the page, the entered values remain unchanged. The shopping list also allows filtering items based on the entered string.</p>
 
                 <div className="itemBox">
                     <label htmlFor="newItem">Add an item:</label>
@@ -113,3 +110,10 @@ export default function ShoppingList() {
         </div>
     )
 }
+
+
+
+
+
+
+

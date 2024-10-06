@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": "3dc791b5-29a1-408d-af7b-3bed39a20f57",
+      "title": "Bali 2023",
+      "body": "Trip to Bali in September 2023. Uluwatu, Canggu, Ubud, Kuta and others..."
+    },
+    {
+      "id": "5f59ef73-a71d-4abb-9be7-3ae9ab2c2fe0",
+      "title": "Australia 2023",
+      "body": "Trip to Perth, Australia in September 2023, visited Rottnest Island..."
+    },
+    {
+      "id": "d829569a-c291-4a84-9480-8f10cd95cdc0",
+      "title": "Chicago 2024",
+      "body": "Trip to Chicago, USA in January 2024 while visiting Colorado, USA."
+    },
+    {
+      "id": "4f039c94-2832-4a46-b16b-0ee6ca62dfd8",
+      "title": "Corfu 2024",
+      "body": "Trip to Corfu, Greece in June 2024."
+    }
+  ]
+}

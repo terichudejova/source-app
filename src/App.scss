@@ -46,6 +46,13 @@ $s-xxxl: 9rem;
     align-items: center;
 }
 
+@mixin column-start-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
 @mixin row-center-center {
     display: flex;
     flex-direction: row;
@@ -65,6 +72,13 @@ $s-xxxl: 9rem;
     flex-direction: row;
     justify-content: start;
     align-items: center;
+}
+
+@mixin row-start-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
 }
 
 

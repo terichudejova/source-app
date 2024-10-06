@@ -9,7 +9,6 @@
 
     .innerBox {
         width: 80%;
-        border: dashed 0.2px black;
 
         h1 {
             font-size: $f-xxxl;
@@ -20,15 +19,61 @@
             font-size: $f-xxl;
             color: white;
         }
+
+        h3 {
+          font-size: $f-xl;
+          color: white;
+        }
+
+        h4 {
+          font-size: $f-l;
+          color: white;
+        }
           
         p {
             font-size: $f-m;
             color: white;
         }
+
+        a {
+          text-decoration: none;
+          color: $dark-color;
+          cursor: pointer;
+
+          &:hover {
+            color: $light-color;
+          }
+        }
+
+        span {
+          color: $light-color;
+        }
+
+        label {
+          font-size: $f-m;
+          color: white;
+          margin-right: $s-s;
+        }
+
       }
-  }
+}
+
+button {
+  font-size: $f-s;
+  width: auto;
+  padding: $s-xxs $s-xs;
+  border-radius: 16px;
+  background-color: $light-color;
+  border: 1px solid $dark-color; 
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
   
-  
+button:hover {
+  background-color: $dark-color;
+  color: white;
+  border: white solid 1px; 
+}
   
   
   /* NAVBAR */
@@ -67,6 +112,10 @@
     color: $hover-color;
     background-color: $main-color;
     border-radius: 16px;
+  }
+
+  .navLink.scrolled {
+    color: $dark-color;
   }
   
   .nav.scrolled {
@@ -110,7 +159,66 @@
     transform: rotate(-45deg) translate(5px, -13.5px) scaleX(1.2);
   }
 
+// EXTERNAL API
+.nameGuess {
+  @include column-start-start;
+  margin-top: $s-l;
 
+  label {
+    font-size: $f-m;
+    color: white;
+  }
+
+  input {
+    background-color: $light-color;
+    border-radius: 10px;
+    border: 1px solid $dark-color;
+    height: 3rem;
+    width: 20rem;
+    margin: $s-xxs 0;
+  }
+
+  ul {
+    font-size: $f-m;
+    color: white;
+  }
+}
+
+// API
+.linkToPost {
+  text-decoration: none;
+}
+
+.newPost {
+  @include column-start-start;
+  margin-top: $s-l;
+
+  .formularWindow {
+    @include row-start-start;
+    margin-bottom: $s-m;
+  }
+}
+
+// POST
+.back {
+  cursor: pointer;
+}
+
+// STATUS MANAGEMENT
+.component {
+  width: 100%;
+  @include row-start-center;
+  margin-bottom: $s-l;
+  margin-top: 0;
+
+  p {
+    margin-right: $s-m;
+  }
+
+  button {
+    margin-right: $s-m;
+  }
+}
 
 
 @media only screen and (max-width: 1000px) {

@@ -10,6 +10,7 @@
     height: auto;
     box-sizing: border-box;
     margin: 0;
+    margin-bottom: $s-l;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -86,6 +87,16 @@
     transform: scale(1.03);
   }
   
+  .formularButton:disabled {
+    cursor: default;
+    opacity: 0.7;
+    color: $main-color;
+    background-color: $light-color;
+    transform: none;
+    border: none;
+    box-shadow: none;
+  }
+
   /* Efekt při kliknutí */
   .formularButton:active {
     transform: translate(2px, 2px);
@@ -96,6 +107,23 @@
   .label {
     margin-bottom: $s-xs;
     color: $hover-color;
+    @include row-between-center;
+  }
+
+  //styl instructions
+  .instructions {
+    border: 1px solid white;
+    border-radius: 16px;
+    width: 100%;
+    padding: $s-xxs $s-xs;
+    margin: $s-xxs 0;
+    font-size: $f-xs !important;
+    width: auto;
+     
+    p {
+      font-size: $f-xs !important;
+      margin: 0;
+    }
   }
   
   /* Media Queries */

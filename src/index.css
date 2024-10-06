@@ -26,7 +26,6 @@ body, html {
 }
 .outerBox .innerBox {
   width: 80%;
-  border: dashed 0.2px black;
 }
 .outerBox .innerBox h1 {
   font-size: 4rem;
@@ -36,9 +35,50 @@ body, html {
   font-size: 3.6rem;
   color: white;
 }
+.outerBox .innerBox h3 {
+  font-size: 3rem;
+  color: white;
+}
+.outerBox .innerBox h4 {
+  font-size: 2.5rem;
+  color: white;
+}
 .outerBox .innerBox p {
   font-size: 2rem;
   color: white;
+}
+.outerBox .innerBox a {
+  text-decoration: none;
+  color: #11658f;
+  cursor: pointer;
+}
+.outerBox .innerBox a:hover {
+  color: #d6f4ff;
+}
+.outerBox .innerBox span {
+  color: #d6f4ff;
+}
+.outerBox .innerBox label {
+  font-size: 2rem;
+  color: white;
+  margin-right: 3rem;
+}
+
+button {
+  font-size: 1.8rem;
+  width: auto;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  background-color: #d6f4ff;
+  border: 1px solid #11658f;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: #11658f;
+  color: white;
+  border: white solid 1px;
 }
 
 /* NAVBAR */
@@ -85,6 +125,10 @@ nav {
   border-radius: 16px;
 }
 
+.navLink.scrolled {
+  color: #11658f;
+}
+
 .nav.scrolled {
   background-color: #d6f4ff;
   padding-top: 2rem;
@@ -122,6 +166,69 @@ nav {
 
 .nav.open .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -13.5px) scaleX(1.2);
+}
+
+.nameGuess {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5rem;
+}
+.nameGuess label {
+  font-size: 2rem;
+  color: white;
+}
+.nameGuess input {
+  background-color: #d6f4ff;
+  border-radius: 10px;
+  border: 1px solid #11658f;
+  height: 3rem;
+  width: 20rem;
+  margin: 1rem 0;
+}
+.nameGuess ul {
+  font-size: 2rem;
+  color: white;
+}
+
+.linkToPost {
+  text-decoration: none;
+}
+
+.newPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5rem;
+}
+.newPost .formularWindow {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.component {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5rem;
+  margin-top: 0;
+}
+.component p {
+  margin-right: 4rem;
+}
+.component button {
+  margin-right: 4rem;
 }
 
 @media only screen and (max-width: 1000px) {
