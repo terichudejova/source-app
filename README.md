@@ -13,3 +13,4 @@ In each section, I demonstrate:<br/><br/>
 **Local API:** This section demonstrates the use of both fetch and axios with GET, POST, PATCH, and DELETE methods. In addition to fetching and displaying blog posts, you can add a new post, edit it, or delete it directly through the UI (port 3500, data/db.json file).<br/>
 **Status Management:** An example of passing state between React components – the state changed in component C is updated in components A and B as well.<br/>
 
+**!!!!** Although there's a GitHub Page connected to this project, the registration form and local API won't work directly from the GH Page. You'll need to run it locally and start the servers on the mentioned ports (3500 and 4000) to test those features.
