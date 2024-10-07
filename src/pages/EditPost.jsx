@@ -1,4 +1,5 @@
 
+//both fetch and axios are shown
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";

@@ -9,30 +9,26 @@
 
     .innerBox {
         width: 80%;
+        color: white;
 
         h1 {
             font-size: $f-xxxl;
-            color: white;
         }
           
         h2 {
             font-size: $f-xxl;
-            color: white;
         }
 
         h3 {
           font-size: $f-xl;
-          color: white;
         }
 
         h4 {
           font-size: $f-l;
-          color: white;
         }
           
         p {
             font-size: $f-m;
-            color: white;
         }
 
         a {
@@ -51,7 +47,6 @@
 
         label {
           font-size: $f-m;
-          color: white;
           margin-right: $s-s;
         }
 
@@ -75,6 +70,8 @@ button:hover {
   border: white solid 1px; 
 }
   
+//-----------------------------------------------------
+//WEB SECTIONS
   
   /* NAVBAR */
   nav {
@@ -220,6 +217,9 @@ button:hover {
   }
 }
 
+//---------------------------------------------------
+
+// RESPONZIVITA WEBU
 
 @media only screen and (max-width: 1000px) {
     /* NAVBAR */
@@ -271,19 +271,6 @@ button:hover {
     }
   }
   
-  /* HOME */
-  
-  
-  /* ABOUT */
-  
-  
-  /* CONTACT */
-  
-  
-  
-  
-  
-  /* RESPONSIVITY */
   .outerBox {
     .innerBox {
 

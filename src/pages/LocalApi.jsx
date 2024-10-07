@@ -1,3 +1,5 @@
+//both axios and fetch are shown
+
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuid} from "uuid";
@@ -10,8 +12,6 @@ export default function LocalApi() {
     const [posts, setPosts] = useState([]);
     const [newTitle, setNewTitle] = useState("")
     const [newBody, setNewBody] = useState("");
-
-    //both fetch and axios versions shown
 
     // const fetchPosts = async () => {
     //     try {
