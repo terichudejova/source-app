@@ -1,159 +1,357 @@
+@import "index";
 
-
-
-//VARIABLES
-
-//fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-$main-font: "Roboto", sans-serif;
-
-//colors
-$main-color: #58a0dc;
-$dark-color: #11658f;
-$light-color: #d6f4ff;
-$contrast-color: #e39e21;
-$hover-color: #3b4856;
-
-//font sizes
-$f-xxxs: 1rem;
-$f-xxs: 1.3rem;
-$f-xs: 1.5rem;
-$f-s: 1.8rem;
-$f-m: 2rem;
-$f-l: 2.5rem;
-$f-xl: 3rem;
-$f-xxl: 3.6rem;
-$f-xxxl: 4rem;
-
-//spaces
-$s-xxxs: 0.5rem;
-$s-xxs: 1rem;
-$s-xs: 2rem;
-$s-s: 3rem;
-$s-m: 4rem;
-$s-l: 5rem;
-$s-xl: 6rem;
-$s-xxl: 7rem;
-$s-xxxl: 9rem;
-
-
-
-//mixins
-@mixin column-start-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
-@mixin column-start-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-
-@mixin row-center-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin row-between-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@mixin row-start-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-}
-
-@mixin row-start-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
-}
-
-
-//breakpoints
-$breakpoints: (
-    "w-330": 330px,
-    "w-400": 400px,
-    "w-600": 600px,
-    "w-800": 800px,
-    "w-1000": 1000px,
-    "w-1400": 1400px,
-    "w-2000": 2000px,
-    "w-3000": 3000px 
-);
-
-@mixin w-330 {
-    @media only screen and (max-width: map-get($breakpoints, "w-330")) {
-        @content;
-    }
-};
-
-@mixin w-400 {
-    @media only screen and (max-width: map-get($breakpoints, "w-400")) {
-        @content;
-    }
-};
-
-@mixin w-600 {
-    @media only screen and (max-width: map-get($breakpoints, "w-600")) {
-        @content;
-    }
-};
-
-@mixin w-800 {
-    @media only screen and (max-width: map-get($breakpoints, "w-800")) {
-        @content;
-    }
-};
-
-@mixin w-1000 {
-    @media only screen and (max-width: map-get($breakpoints, "w-1000")) {
-        @content;
-    }
-};
-
-@mixin w-1400 {
-    @media only screen and (max-width: map-get($breakpoints, "w-1400")) {
-        @content;
-    }
-};
-
-@mixin w-2000 {
-    @media only screen and (min-width: map-get($breakpoints, "w-2000")) {
-        @content;
-    }
-};
-
-@mixin w-3000 {
-    @media only screen and (min-width: map-get($breakpoints, "w-3000")) {
-        @content;
-    }
-};
-
-
-
-
-body, html {
-    font-size: 62.5%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* OBECNÁ NASTAVENÍ */
+.outerBox {
+    padding-top: $s-l * 3;
+    @include column-start-center;
+    width: 100%;
     background-color: $main-color;
-    color: black;
-    font-family: $main-font;
-    overflow-x: hidden;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
+
+    .innerBox {
+        width: 80%;
+
+        h1 {
+            font-size: $f-xxxl;
+            color: white;
+        }
+          
+        h2 {
+            font-size: $f-xxl;
+            color: white;
+        }
+
+        h3 {
+          font-size: $f-xl;
+          color: white;
+        }
+
+        h4 {
+          font-size: $f-l;
+          color: white;
+        }
+          
+        p {
+            font-size: $f-m;
+            color: white;
+        }
+
+        a {
+          text-decoration: none;
+          color: $dark-color;
+          cursor: pointer;
+
+          &:hover {
+            color: $light-color;
+          }
+        }
+
+        span {
+          color: $light-color;
+        }
+
+        label {
+          font-size: $f-m;
+          color: white;
+          margin-right: $s-s;
+        }
+
+      }
 }
+
+button {
+  font-size: $f-s;
+  width: auto;
+  padding: $s-xxs $s-xs;
+  border-radius: 16px;
+  background-color: $light-color;
+  border: 1px solid $dark-color; 
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+  
+button:hover {
+  background-color: $dark-color;
+  color: white;
+  border: white solid 1px; 
+}
+  
+  
+  /* NAVBAR */
+  nav {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    @include row-between-center;
+    padding: $s-s $s-m;
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  .nav-links {
+    width: 100%;
+    @include row-between-center;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    font-family: $main-font;
+    letter-spacing: 2px;
+    font-size: $f-m;
+    padding: $s-xxs $s-xs;
+    color: white;
+  }
+  
+  .navLink:hover {
+    cursor: pointer;
+    color: $hover-color;
+  }
+  
+  .navLink.active {
+    color: $hover-color;
+    background-color: $main-color;
+    border-radius: 16px;
+  }
+
+  .navLink.scrolled {
+    color: $dark-color;
+  }
+  
+  .nav.scrolled {
+    background-color: $light-color;
+    padding-top: $s-xs;
+    padding-bottom: $s-xs;
+  }
+  
+  
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    height: 3px;
+    width: 35px;
+    background-color: $light-color;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .nav.scrolled .hamburger {
+    margin-top: $s-xs;
+  }
+  
+  
+  /* Přechod hamburgeru na křížek */
+  .nav.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 13.5px) scaleX(1.2);
+  }
+  
+  .nav.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -13.5px) scaleX(1.2);
+  }
+
+// EXTERNAL API
+.nameGuess {
+  @include column-start-start;
+  margin-top: $s-l;
+
+  label {
+    font-size: $f-m;
+    color: white;
+  }
+
+  input {
+    background-color: $light-color;
+    border-radius: 10px;
+    border: 1px solid $dark-color;
+    height: 3rem;
+    width: 20rem;
+    margin: $s-xxs 0;
+  }
+
+  ul {
+    font-size: $f-m;
+    color: white;
+  }
+}
+
+// API
+.linkToPost {
+  text-decoration: none;
+}
+
+.newPost {
+  @include column-start-start;
+  margin-top: $s-l;
+
+  .formularWindow {
+    @include row-start-start;
+    margin-bottom: $s-m;
+  }
+}
+
+// POST
+.back {
+  cursor: pointer;
+}
+
+// STATUS MANAGEMENT
+.component {
+  width: 100%;
+  @include row-start-center;
+  margin-bottom: $s-l;
+  margin-top: 0;
+
+  p {
+    margin-right: $s-m;
+  }
+
+  button {
+    margin-right: $s-m;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    /* NAVBAR */
+    .nav-links {
+      display: none;
+    }
+  
+    .nav.open {
+      padding-top: 0;
+    }
+  
+    .nav.open .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      margin-top: 0;
+      z-index: 1;
+      padding-top: $s-xs;
+      padding-bottom: $s-xs;
+    }
+  
+    .navLink {
+      margin-bottom: $s-xxs;
+      color: $main-color;
+    }
+  
+    .hamburger {
+      display: flex;
+      z-index: 2;
+      margin-top: $s-s;
+    }
+  
+    .nav.open .bar {
+      background-color: $hover-color;
+    }
+    
+    .nav-links.show {
+      display: flex;
+      background-color: $light-color;
+    }
+  
+    #homeLink {
+      color: $light-color;
+    }
+  }
+  
+  /* HOME */
+  
+  
+  /* ABOUT */
+  
+  
+  /* CONTACT */
+  
+  
+  
+  
+  
+  /* RESPONSIVITY */
+  .outerBox {
+    .innerBox {
+
+        //min 2000px
+        @include w-2000 {
+            width: 70%;
+
+            h2 {
+                font-size: $f-xxxl;
+            }
+            
+            p {
+                font-size: $f-l;
+            }
+        }
+
+        //min 3000px
+        @include w-3000 {
+            width: 60%;
+
+            h2 {
+                font-size: $f-l * 2;
+            }
+            
+            p {
+                font-size: $f-xl;
+            }
+        }
+
+        //max 800px
+        @include w-800 {
+            h2 {
+                font-size: $f-xl;
+
+            }
+
+            p {
+                font-size: $f-s;
+            }
+        }
+
+        //max 600px
+        @include w-600 {
+            width: 85%;
+        }
+
+        //max 400px
+        @include w-400 {
+
+            h2 {
+                font-size: $f-l;
+            }
+
+            p {
+                font-size: $f-s;
+            }
+        }
+    }
+  }
+
+
+.navLink {
+
+    //max 400px
+    @include w-400 {
+        font-size: $f-s;
+    }
+}
+  
+
+

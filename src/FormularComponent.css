@@ -14,6 +14,319 @@ body, html {
   -webkit-text-size-adjust: none;
 }
 
+/* OBECNÁ NASTAVENÍ */
+.outerBox {
+  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  background-color: #58a0dc;
+}
+.outerBox .innerBox {
+  width: 80%;
+}
+.outerBox .innerBox h1 {
+  font-size: 4rem;
+  color: white;
+}
+.outerBox .innerBox h2 {
+  font-size: 3.6rem;
+  color: white;
+}
+.outerBox .innerBox h3 {
+  font-size: 3rem;
+  color: white;
+}
+.outerBox .innerBox h4 {
+  font-size: 2.5rem;
+  color: white;
+}
+.outerBox .innerBox p {
+  font-size: 2rem;
+  color: white;
+}
+.outerBox .innerBox a {
+  text-decoration: none;
+  color: #11658f;
+  cursor: pointer;
+}
+.outerBox .innerBox a:hover {
+  color: #d6f4ff;
+}
+.outerBox .innerBox span {
+  color: #d6f4ff;
+}
+.outerBox .innerBox label {
+  font-size: 2rem;
+  color: white;
+  margin-right: 3rem;
+}
+
+button {
+  font-size: 1.8rem;
+  width: auto;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  background-color: #d6f4ff;
+  border: 1px solid #11658f;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: #11658f;
+  color: white;
+  border: white solid 1px;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 4rem;
+  box-sizing: border-box;
+  margin: 0;
+  z-index: 2;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navLink:hover {
+  cursor: pointer;
+  color: #3b4856;
+}
+
+.navLink.active {
+  color: #3b4856;
+  background-color: #58a0dc;
+  border-radius: 16px;
+}
+
+.navLink.scrolled {
+  color: #11658f;
+}
+
+.nav.scrolled {
+  background-color: #d6f4ff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 35px;
+  background-color: #d6f4ff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.nav.scrolled .hamburger {
+  margin-top: 2rem;
+}
+
+/* Přechod hamburgeru na křížek */
+.nav.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 13.5px) scaleX(1.2);
+}
+
+.nav.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -13.5px) scaleX(1.2);
+}
+
+.nameGuess {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5rem;
+}
+.nameGuess label {
+  font-size: 2rem;
+  color: white;
+}
+.nameGuess input {
+  background-color: #d6f4ff;
+  border-radius: 10px;
+  border: 1px solid #11658f;
+  height: 3rem;
+  width: 20rem;
+  margin: 1rem 0;
+}
+.nameGuess ul {
+  font-size: 2rem;
+  color: white;
+}
+
+.linkToPost {
+  text-decoration: none;
+}
+
+.newPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5rem;
+}
+.newPost .formularWindow {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.component {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5rem;
+  margin-top: 0;
+}
+.component p {
+  margin-right: 4rem;
+}
+.component button {
+  margin-right: 4rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* NAVBAR */
+  .nav-links {
+    display: none;
+  }
+  .nav.open {
+    padding-top: 0;
+  }
+  .nav.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    margin-top: 0;
+    z-index: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .navLink {
+    margin-bottom: 1rem;
+    color: #58a0dc;
+  }
+  .hamburger {
+    display: flex;
+    z-index: 2;
+    margin-top: 3rem;
+  }
+  .nav.open .bar {
+    background-color: #3b4856;
+  }
+  .nav-links.show {
+    display: flex;
+    background-color: #d6f4ff;
+  }
+  #homeLink {
+    color: #d6f4ff;
+  }
+}
+/* HOME */
+/* ABOUT */
+/* CONTACT */
+/* RESPONSIVITY */
+@media only screen and (min-width: 2000px) {
+  .outerBox .innerBox {
+    width: 70%;
+  }
+  .outerBox .innerBox h2 {
+    font-size: 4rem;
+  }
+  .outerBox .innerBox p {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 3000px) {
+  .outerBox .innerBox {
+    width: 60%;
+  }
+  .outerBox .innerBox h2 {
+    font-size: 5rem;
+  }
+  .outerBox .innerBox p {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .outerBox .innerBox h2 {
+    font-size: 3rem;
+  }
+  .outerBox .innerBox p {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .outerBox .innerBox {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .outerBox .innerBox h2 {
+    font-size: 2.5rem;
+  }
+  .outerBox .innerBox p {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .navLink {
+    font-size: 1.8rem;
+  }
+}
+
 /* Styling celého formuláře */
 .formularObject {
   background: #58a0dc;
@@ -187,50 +500,4 @@ select {
   .label {
     font-size: 1.8rem;
   }
-}
-/* 
-@media only screen and (max-width: 1400px) {
-  .formularObject {
-    margin: 0 0 0 calc(var(--space-m));
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .formularObject {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .formularObject {
-    width: 100%;
-    height: 50rem;
-  }
-
-  .textArea {
-    min-height: 180px;
-  }
-
-  .formularButton {
-    margin-top: var(--space-s);
-  }
-
-  .label {
-    font-size: var(--size-s);
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .formularObject {
-    height: 60rem;
-  }
-
-  .textArea {
-    min-height: 260px;
-  }
-
-  .formularButton {
-    margin-top: var(--space-s);
-  }
-}
- *//*# sourceMappingURL=FormularComponent.css.map */
+}/*# sourceMappingURL=FormularComponent.css.map */

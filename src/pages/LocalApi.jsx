@@ -102,7 +102,7 @@ export default function LocalApi() {
     return (
         <div className="outerBox">
             <div className="innerBox">  
-                <h1>Api posts</h1>
+                <h1>API posts</h1>
                 <p>If you run <span>npx json-server --watch data/db.json --port 3500</span>, you can create posts that will be saved to the db.json file. By clicking on the post title, you can view the full post and its content. Posts can also be edited.</p>
                 <div className="posts">
                     {fetchError ?
