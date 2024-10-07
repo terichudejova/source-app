@@ -15,32 +15,42 @@ const FormularComponent = () => {
         focusRef.current.focus();
     }, [])
 
-    const handleSubmit = async (e) => {
+   
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Zakódování hodnot
+    
+        // Zakódování hodnot pro odeslání
         const encodedShort = encodeURIComponent(short);
         const encodedLong = encodeURIComponent(long);
         const encodedOptions = encodeURIComponent(options);
-
-        // URL Google Formuláře s ID pro každé pole
-        const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSflRICMJQ6pnCOuKEmZj8bUMsy-c3hn4JZwVq4-yaAVt2RmuQ/formResponse";
-        const queryString = `?entry.1590673237=${encodedShort}&entry.1874192012=${encodedLong}&entry.229495312=${encodedOptions}`;
-        const finalUrl = googleFormUrl + queryString;
-
+    
+        // URL Google Formuláře
+        const googleFormUrl =
+          'https://docs.google.com/forms/d/e/1FAIpQLScG8N0ADlOC-H7LFcLHTqgwjunpOE6NzFVGKm4xygpODuZ4hg/formResponse';
         
+        // Query string s propojením vstupních hodnot
+        const queryString = `?entry.2109996861=${encodedShort}&entry.693860713=${encodedLong}&entry.1792856319=${encodedOptions}`;
+    
+        const finalUrl = googleFormUrl + queryString;
+    
         // Odeslání GET požadavku
-        try {
-            await fetch (finalUrl, {method: "GET", mode: "no-cors"});
-            alert('Thank you for filling the form.');
+        fetch(finalUrl, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          mode: 'no-cors', // Google Forms neodpovídá, ale odeslání funguje
+        })
+          .then(() => {
+            alert('Díky za vyplnění formuláře. Brzy se Vám ozvu.');
             setShort(''); 
             setLong(''); 
-            setOptions('');
-        } catch (err) {
-            console.error('Error occurred:', err);
-        }
-
-    };
+            setOptions(''); 
+          })
+          .catch((error) => {
+            console.error('Chyba při odesílání formuláře:', error);
+          });
+      };
 
     /// REGISTRAČNÍ FORMULÁŘ
     const REG_URL = "http://localhost:4000/users";
@@ -111,6 +121,7 @@ const FormularComponent = () => {
                     required
                     className="inputStyle"
                     ref={focusRef}
+                    autoComplete='off'
                 />
 
                 <label htmlFor="long" className="label">Text area:</label>
@@ -122,6 +133,7 @@ const FormularComponent = () => {
                     onChange={(e) => setLong(e.target.value)}
                     required
                     className="textArea"
+                    autoComplete='off'
                 />
 
                 <label htmlFor="options" className="label">Options selection:</label>
